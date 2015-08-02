@@ -1,0 +1,13 @@
+{
+  "parts": [
+    { "name": "dojoModuleLoader", "pre": ["ep_carabiner/nodeModuleLoader"],
+      "hooks": {
+        "loadModule": "ep_dojo/node/hooks/dojo:loadDojoModule",
+        "eejsBlock_scripts": "ep_dojo/node/hooks/dojo:clientScripts"
+      },
+      "client_hooks": {
+        "loadModule": ":loadDojoModule"
+      }      
+    }
+  ]
+}

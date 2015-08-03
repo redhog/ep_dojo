@@ -50,5 +50,5 @@ exports.clientScripts = function(hook_name, args) {
   args.content += '' +
     '<script type="text/javascript" src="/static/plugins/ep_dojo/static/js/main.js"></script>' +
     '<script type="text/javascript" src="/static/plugins/ep_express/static/js/jquery.js"></script>' +
-    '<script type="text/javascript" src="/static/plugins/ep_dojo/node_modules/dojo/dojo.js"></script>';
+    '<script type="text/javascript" src="/static/plugins/ep_dojo/static/dojo/dojo.js"></script>';
 };

@@ -7,7 +7,15 @@
       },
       "client_hooks": {
         "loadModule": ":loadDojoModule"
-      }      
+      }
+    },
+    { "name": "dojoStaticFiles", "post": ["ep_express/static"],
+      "urlmap": {
+        "/static/plugins/(plugin_name:ep_dojo)/static/(mod:dojo|dijit)/(path:.*)/?": {
+          "fn":"ep_express/node/hooks/express/static:static",
+          "args": {"src": "(plugin_path:)/node_modules/(mod:)/(path:)"}
+        }
+      }
     }
   ]
 }

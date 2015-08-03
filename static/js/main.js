@@ -1,9 +1,9 @@
 dojoConfig = {
-  baseUrl: "/static/plugins",
+  baseUrl: "/static/plugins/",
   async: 1, // We want to make sure we are using the "modern" loader
   packages: [
-    {name: "dojo", location: "dojo"},
-    {name: "dijit", location: "dijit"}
+    {name: "dojo", location: "/static/plugins/ep_dojo/static/dojo"},
+    {name: "dijit", location: "/static/plugins/ep_dojo/static/dijit"}
   ],
   paths: {
     'underscore': "/static/plugins/underscore/static/underscore",

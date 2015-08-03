@@ -1,5 +1,5 @@
 dojoConfig = {
-  baseUrl: "/static/plugins/",
+  baseUrl: "/static/plugins/dummy", // Yes, dojo requires this to be one level too many down
   async: 1, // We want to make sure we are using the "modern" loader
   packages: [
     {name: "dojo", location: "/static/plugins/ep_dojo/static/dojo"},

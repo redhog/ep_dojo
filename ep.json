@@ -11,9 +11,9 @@
     },
     { "name": "dojoStaticFiles", "post": ["ep_express/static"],
       "urlmap": {
-        "/static/plugins/(plugin_name:ep_dojo)/static/(mod:dojo|dijit)/(path:.*)/?": {
+        "/static/plugins/(package_name:ep_dojo)/static/(mod:dojo|dijit)/(path:.*)/?": {
           "fn":"ep_express/node/hooks/express/static:static",
-          "args": {"src": "(plugin_path:)/node_modules/(mod:)/(path:)"}
+          "args": {"src": "(package_path:)/node_modules/(mod:)/(path:)"}
         }
       }
     }

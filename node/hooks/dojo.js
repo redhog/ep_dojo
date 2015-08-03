@@ -2,7 +2,7 @@ plugins = require("ep_carabiner/static/js/plugins");
 path = require("path");
 
 dojoConfig = {
-  baseUrl: module.paths[3], // Yes, dojo requires this to be one level too many down
+  baseUrl: module.paths[3], // Yes, dojo requires this to be one level too many down, but module.paths[x] has an extra node_modules too
   async: 1, // We want to make sure we are using the "modern" loader
   hasCache: {
     "host-node": 1, // Ensure we "force" the loader into Node.js mode

@@ -20,6 +20,7 @@ dojoConfig = {
 
 global.nodeRequire = require;
 require("ep_dojo/node_modules/dojo/dojo.js");
+delete global.define;
 
 
 mix = function(dest, src){
@@ -38,7 +39,10 @@ global.dojoRequire.injectUrl = function(url, callback) {
     vm.runInThisContext(fs.readFileSync(url, "utf8"), url);
     callback();
   } catch(e) {
-    global.dojoRequire.signal('error', makeError("injectUrl", [e]));
+    // Signaling an error will print to screen, which is annoying, so
+    // bypass this logic for now...
+    // global.dojoRequire.signal('error', makeError("injectUrl", [e]));
+    exports.handleError(makeError("injectUrl", [e]));
   }
 };
 
@@ -48,7 +52,7 @@ exports.handleError = function(error) {
     exports.errorStack.pop()(error);
   }
 }
-global.dojoRequire.on("error", exports.handleError);
+// global.dojoRequire.on("error", exports.handleError);
 
 exports.loadDojoModule = function(hook_name, args, cb) {
   exports.errorStack.push(function (error) {

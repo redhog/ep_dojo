@@ -3,6 +3,12 @@
     { "name": "dojoModuleLoader", "pre": ["ep_carabiner/nodeModuleLoader"],
       "hooks": {
         "loadModule": "ep_dojo/node/hooks/dojo:loadDojoModule",
+        "dojoConfig": "ep_dojo/node/hooks/dojoConfig:dojoConfig",
+        "packages": "ep_dojo/node/hooks/dojoConfig:packages",
+        "paths": "ep_dojo/node/hooks/dojoConfig:paths",
+        "clientDojoConfig": "ep_dojo/node/hooks/dojoConfig:clientDojoConfig",
+        "clientPackages": "ep_dojo/node/hooks/dojoConfig:clientPackages",
+        "clientPaths": "ep_dojo/node/hooks/dojoConfig:clientPaths",
         "eejsBlock_scripts": "ep_dojo/node/hooks/dojo:clientScripts"
       },
       "client_hooks": {
